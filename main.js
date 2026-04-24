@@ -135,3 +135,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const btn = document.querySelector(".btn-submit");
+
+    // Step 1: Sending...
+    btn.innerText = "Sending...";
+    btn.disabled = true;
+
+    // Fake delay (simulate sending)
+    setTimeout(() => {
+
+        // Step 2: Sent
+        btn.innerText = "Sent ✅";
+        this.reset();
+
+        // Step 3: 5 sec baad wapas normal
+        setTimeout(() => {
+            btn.innerText = "Send Message →";
+            btn.disabled = false;
+        }, 3000);
+
+    }, 1000);
+});
+
